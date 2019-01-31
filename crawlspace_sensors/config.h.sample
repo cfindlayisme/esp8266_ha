@@ -1,0 +1,8 @@
+#define ONE_WIRE_BUS 2
+
+#define wifi_ssid ""
+#define wifi_password ""
+
+#define mqtt_server ""
+
+#define temperature_topic "crawlspace/watermain/temperature"

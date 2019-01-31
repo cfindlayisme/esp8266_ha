@@ -1,0 +1,11 @@
+#define DHTPIN 4
+#define DHTTYPE DHT11
+#define SSPIN A0
+
+#define wifi_ssid ""
+#define wifi_password ""
+#define mqtt_server ""
+
+#define topic_m "growtent/germination/moisture"
+#define topic_h "growtent/germination/humidity"
+#define topic_t "growtent/germination/temperature"

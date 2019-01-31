@@ -19,3 +19,6 @@ TODO: Document what was done
 
 ## Config
 See config.h and input WiFi information alongside MQTT broker and topic.
+
+## Reliability
+With a well sealed box, I've been running this feeding into homeassistant since late 2017 without a hiccup in Northern Alberta, Canada. It's allowed me to just glance to see if freezing would be an issue without having to crawl under the house and check. Which is very nice in the -30 to -40c weather.

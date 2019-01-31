@@ -1,5 +1,5 @@
 # Growtent Germination Sensors
-![Picture of sensors in HA](picture.jpg?raw=true)
+![Picture of sensors in HA](picture.png?raw=true)
 ## Introduction
 The sensors here are used to monitor the enviorment in a growtent compartment used for germinating seedlings.
 

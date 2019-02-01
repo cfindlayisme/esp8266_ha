@@ -16,7 +16,7 @@ Sensors provided:
  - Breadboard and wires (or you can solder directly, if you want)
 
 ## Wiring
-![Wiring on breadboard (not a sketch)](wiring_actual.png?raw=true)
+![Wiring on breadboard (not a sketch)](wiring_actual.jpg?raw=true)
 Below is the written version
  - NodeMCU A0 to resistive sensor data pin
  - NodeMCU D2 to DHT11 data pin

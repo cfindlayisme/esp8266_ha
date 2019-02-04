@@ -1,8 +1,10 @@
-#define ONE_WIRE_BUS 2
+#define WMAIN_PIN 2 // D4
+#define SEWER_PIN 5 // D1
 
-#define wifi_ssid ""
-#define wifi_password ""
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
-#define mqtt_server ""
+#define MQTT_SERVER ""
 
-#define temperature_topic "crawlspace/watermain/temperature"
+#define WMAIN_TOPIC "crawlspace/watermain/temperature"
+#define SEWER_TOPIC "crawlspace/sewer/temperature"

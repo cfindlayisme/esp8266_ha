@@ -5,8 +5,9 @@
 
 #include "config.h"
 
-OneWire oneWire(ONE_WIRE_BUS);
-DallasTemperature DS18B20(&oneWire);
+OneWire wMainWire(WMAIN_PIN);
+DallasTemperature wMainTemp(&wMainWire);
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -17,7 +18,7 @@ void setup() {
   // Wait for serial to initialize.
   while (!Serial) { }
   setup_wifi();
-  client.setServer(mqtt_server, 1883);
+  client.setServer(MQTT_SERVER, 1883);
 }
 
 void reconnect() {
@@ -42,9 +43,9 @@ void setup_wifi() {
   delay(10);
   Serial.println();
   Serial.print("Connecting to ");
-  Serial.println(wifi_ssid);
+  Serial.println(WIFI_SSID);
 
-  WiFi.begin(wifi_ssid, wifi_password);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -55,7 +56,7 @@ void setup_wifi() {
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
-  client.setServer(mqtt_server, 1883);
+  client.setServer(MQTT_SERVER, 1883);
 }
 
 void loop() {
@@ -67,13 +68,13 @@ void loop() {
   float temp;
   
   do {
-    DS18B20.requestTemperatures(); 
-    temp = DS18B20.getTempCByIndex(0);
+    wMainTemp.requestTemperatures(); 
+    temp = wMainTemp.getTempCByIndex(0);
     Serial.print("Temperature: ");
     Serial.println(temp);
   } while (temp == 85.0 || temp == (-127.0));
 
-  client.publish(temperature_topic, String(temp).c_str(), true);
+  client.publish(WMAIN_TOPIC, String(temp).c_str(), true);
   delay(1000);
   
   client.disconnect();
